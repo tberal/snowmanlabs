@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <p>You are currently not logged in, in order to view all the content please log in with your facebook account:</p>
+    <div class="fb-login-button" data-size='xlarge' data-scope="public_profile">
+        Sign in
+    </div>
+</div>
+<div class="center">
+    <h4>Nearby Places</h4>
+    <table>
+        <tr>
+            <td>Latitude</td>
+            <td>Longitude</td>
+            <td>Name</td>
+            <td>Category</td>
+        </tr>
+        {% for item in nearby %}
+        <tr>
+            <td>{{ item['latitude'] }}</td>
+            <td>{{ item['longitude'] }}</td>
+            <td>{{ item['name'] }}</td>
+            <td>{{ item['category'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

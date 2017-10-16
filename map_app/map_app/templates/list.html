@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <table>
+            <tr>
+                <td>Latitude</td>
+                <td>Longitude</td>
+                <td>Name</td>
+                <td>Category</td>
+                <td>Public</td>
+                <td>Created By</td>
+            </tr>
+            {% for item in points %}
+            <tr>
+                <td>{{ item['latitude'] }}</td>
+                <td>{{ item['longitude'] }}</td>
+                <td>{{ item['name'] }}</td>
+                <td>{{ item['category'] }}</td>
+                <td>{{ item['public'] }}</td>
+                <td>{{ item['user'] }}</td>
+                <td><a href={{ url_for('delete', lat=item['latitude'], lng=item['longitude']) }}>Delete</a>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

@@ -1,0 +1,2 @@
+recursive-include map_app/templates *
+recursive-include map_app/static *
